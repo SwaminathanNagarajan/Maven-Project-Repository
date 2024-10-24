@@ -60,6 +60,8 @@ public class tabswitch {
         }catch (InterruptedException e) {
         	e.printStackTrace();
         }
+        String title = driver.getTitle();
+        System.out.println("Required operations are done" +title);
         // Close all windows
         driver.quit();
     }
