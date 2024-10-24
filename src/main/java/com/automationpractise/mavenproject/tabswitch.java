@@ -15,10 +15,21 @@ public class tabswitch {
         
         // Open first URL
         driver.get("https://www.google.com");
+        try{
+        	Thread.sleep(5000);
+        	
+        }catch (InterruptedException e) {
+        	e.printStackTrace();
+        }
         
         // Open second tab using JavascriptExecutor
         ((JavascriptExecutor) driver).executeScript("window.open('https://www.youtube.com', '_blank');");
-
+        try{
+        	Thread.sleep(5000);
+        	
+        }catch (InterruptedException e) {
+        	e.printStackTrace();
+        }
         // Get the window handles of all open tabs
         Set<String> windowHandles = driver.getWindowHandles();
         
@@ -30,6 +41,12 @@ public class tabswitch {
             driver.switchTo().window(handle);
             if (driver.getTitle().contains("YouTube")) {
                 System.out.println("Switched to the YouTube tab: " + driver.getTitle());
+                try{
+                	Thread.sleep(5000);
+                	
+                }catch (InterruptedException e) {
+                	e.printStackTrace();
+                }
                 break;  // Stop switching once you find the desired tab
             }
         }
@@ -37,7 +54,12 @@ public class tabswitch {
         // Switch back to the first tab (Google)
         driver.switchTo().window(firstTab);
         System.out.println("Switched back to the first tab: " + driver.getTitle());
-        
+        try{
+        	Thread.sleep(5000);
+        	
+        }catch (InterruptedException e) {
+        	e.printStackTrace();
+        }
         // Close all windows
         driver.quit();
     }
